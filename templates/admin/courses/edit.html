@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row mt-4 px-2 py-3 rounded bg-white shadow-sm">
+        <div class="col-md-5">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+
+                <div class="text-end">
+                    <a href="/admin/courses/" class="btn btn-sm btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

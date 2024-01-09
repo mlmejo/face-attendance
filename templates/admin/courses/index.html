@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <div class="d-flex align-items-center justify-content-between mt-4">
+        <h1 class="h4 mb-0 fw-semibold">Courses</h1>
+        <a href="{% url 'course-new' %}" class="btn btn-sm btn-primary">New course</a>
+    </div>
+
+    <div class="table-responsive mt-3 p-3 bg-white rounded shadow-sm">
+        <table id="jquery-table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Course name</th>
+                    <th class="text-end">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for course in object_list %}
+                    <tr>
+                        <td>{{ course.name }}</td>
+                        <td class="text-end">
+                            <a
+                                href="{% url 'course-edit' course.id %}"
+                                class="badge bg-success text-decoration-none"
+                            >
+                                Edit
+                            </a>
+                            <a
+                                href="{% url 'course-delete' course.id %}"
+                                class="badge bg-danger text-decoration-none"
+                            >
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
