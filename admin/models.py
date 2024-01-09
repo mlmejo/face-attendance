@@ -29,3 +29,13 @@ class Instructor(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+
+class Student(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
