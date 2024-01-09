@@ -22,18 +22,12 @@ class CourseCreateView(CreateView):
 
         return form
 
+
 class CourseUpdateView(UpdateView):
     model = Course
     fields = ['name']
     template_name = 'admin/courses/edit.html'
     success_url = '/admin/courses/'
-
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-        field: Field = form.fields['name']
-        field.widget.attrs.update({'class': 'form-control-sm'})
-
-        return form
 
 
 class CourseDeleteView(DeleteView):

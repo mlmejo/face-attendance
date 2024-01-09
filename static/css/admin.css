@@ -84,7 +84,3 @@ body {
     --bs-btn-font-size: 0.875rem !important;
     --bs-btn-border-radius: var(--bs-border-radius-sm) !important;
 }
-
-.asteriskField {
-    color: #dc3545 !important;
-}

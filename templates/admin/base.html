@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load active_link_tags %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/admin.css' %}" />
@@ -30,15 +31,26 @@
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
+                    <h6 class="sidebar-heading px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+                        Information Management
+                    </h6>
                     <ul class="nav flex-column">
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <a
-                                class="nav-link d-flex align-items-center gap-2"
-                                aria-current="page"
-                                href="#"
+                                class="nav-link d-flex align-items-center gap-2 {% active_link 'admin:course-list' %}"
+                                href="{% url 'admin:course-list' %}"
                             >
                                 <i class="bi bi-book-half"></i>
                                 Courses
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a
+                                class="nav-link d-flex align-items-center gap-2 {% active_link 'admin:subject-list' %}"
+                                href="{% url 'admin:subject-list' %}"
+                            >
+                                <i class="bi bi-file-text"></i>
+                                Subjects
                             </a>
                         </li>
                     </ul>

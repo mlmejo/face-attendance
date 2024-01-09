@@ -2,32 +2,40 @@
 
 {% block content %}
     <div class="d-flex align-items-center justify-content-between mt-4">
-        <h1 class="h4 mb-0 fw-semibold">Courses</h1>
-        <a href="{% url 'admin:course-new' %}" class="btn btn-sm btn-primary">New course</a>
+        <h1 class="h4 mb-0 fw-semibold">Subjects</h1>
+        <a href="{% url 'admin:subject-new' %}" class="btn btn-sm btn-primary">New subject</a>
     </div>
 
     <div class="table-responsive mt-3 p-3 bg-white rounded shadow-sm">
         <table id="jquery-table" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Course name</th>
+                    <th>Descriptive title</th>
+                    <th>Course number</th>
+                    <th>Lecture hours</th>
+                    <th>Laboratory hours</th>
+                    <th>Units</th>
                     <th class="text-end">Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                {% for course in object_list %}
+                {% for subject in object_list %}
                     <tr>
-                        <td>{{ course.name }}</td>
+                        <td>{{ subject.descriptive_title }}</td>
+                        <td>{{ subject.course_number }}</td>
+                        <td>{{ subject.lecture_hours }}</td>
+                        <td>{{ subject.laboratory_hours }}</td>
+                        <td>{{ subject.units }}</td>
                         <td class="text-end">
                             <a
-                                href="{% url 'admin:course-edit' course.id %}"
+                                href="{% url 'admin:subject-edit' subject.id %}"
                                 class="badge bg-success text-decoration-none"
                             >
                                 Edit
                             </a>
                             <a
-                                href="{% url 'admin:course-delete' course.id %}"
+                                href="{% url 'admin:subject-delete' subject.id %}"
                                 class="badge bg-danger text-decoration-none"
                             >
                                 Delete

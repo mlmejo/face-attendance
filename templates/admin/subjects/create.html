@@ -1,0 +1,39 @@
+{% extends "admin/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row mt-3">
+        <h1 class="h4 mb-3 fw-semibold">Create subject</h1>
+
+        <div class="col-md-8 p-3 rounded bg-white shadow-sm">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md-6">{{ form.course|as_crispy_field }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">{{ form.descriptive_title|as_crispy_field }}</div>
+                    <div class="col-md-6">{{ form.course_number|as_crispy_field }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">{{ form.lecture_hours|as_crispy_field }}</div>
+                    <div class="col-md-6">{{ form.laboratory_hours|as_crispy_field }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">{{ form.units|as_crispy_field }}</div>
+                </div>
+
+                <div>
+                    <a href="{% url 'admin:subject-list' %}" class="btn btn-sm btn-secondary"
+                        >Cancel</a
+                    >
+                    <button type="submit" class="btn btn-sm btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

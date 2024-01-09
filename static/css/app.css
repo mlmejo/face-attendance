@@ -1,0 +1,30 @@
+.textinput,
+.numberinput {
+    min-height: calc(
+        1.5em + 0.5rem + calc(var(--bs-border-width) * 2)
+    ) !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.875rem !important;
+    border-radius: var(--bs-border-radius-sm) !important;
+}
+
+.form-label {
+    margin-bottom: 0;
+    padding-top: calc(0.25rem + var(--bs-border-width)) !important;
+    padding-bottom: calc(0.25rem + var(--bs-border-width)) !important;
+    font-size: 0.875rem !important;
+}
+
+.asteriskField {
+    color: #dc3545 !important;
+}
+
+.select2-search__field {
+    all: unset !important;
+}
+
+.nav-link.active {
+    color: white !important;
+    background-color: #0d6efd !important;
+    border-radius: .375rem;
+}
