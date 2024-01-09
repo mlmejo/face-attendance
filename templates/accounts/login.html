@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block styles %}
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        background-image: url("{% static 'img/background.webp' %}");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock %}
+
+{% block slot %}
+<main class="m-auto p-3 w-100 rounded bg-white shadow-sm" style="max-width: 330px;">
+    <div class="text-center">
+        <img src="{% static 'img/logo.webp' %}" alt="Attendance Monitoring" width="80" height="80" />
+    </div>
+
+    <form action="" method="post" class="mt-3">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <button type="submit" class="btn w-100 btn-primary">
+            Login
+        </button>
+    </form>
+</main>
+{% endblock %}

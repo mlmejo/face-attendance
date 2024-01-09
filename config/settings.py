@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'admin.apps.AdminConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'active_link',
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 

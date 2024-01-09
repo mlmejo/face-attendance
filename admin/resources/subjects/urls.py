@@ -1,6 +1,6 @@
 from django.urls import path
 
-from admin.subjects.views import (SubjectCreateView, SubjectDeleteView,
+from .views import (SubjectCreateView, SubjectDeleteView,
                                   SubjectListView, SubjectUpdateView)
 
 urlpatterns = [

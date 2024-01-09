@@ -1,0 +1,39 @@
+{% extends "admin/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row mt-3">
+    <h1 class="h4 mb-3 fw-semibold">Create instructor</h1>
+
+    <div class="col-md-6 p-3 rounded bg-white shadow-sm">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.first_name|as_crispy_field }}
+                </div>
+
+                <div class="col-md-6">
+                    {{ form.last_name|as_crispy_field }}
+                </div>
+            </div>
+
+            <div class="border mt-2 mb-3"></div>
+
+            {{ form.email|as_crispy_field }}
+
+            {{ form.password|as_crispy_field }}
+
+            <div>
+                <a href="/admin/instructors/" class="btn btn-secondary">
+                    Cancel
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,22 +1,24 @@
 {% extends "admin/base.html" %}
 
 {% block content %}
-    <div class="row mt-4">
-        <div class="col-md-6 p-3 rounded bg-white shadow-sm">
-            <h1 class="h4 pb-2 fw-semibold border-bottom">Delete course</h1>
+<div class="row mt-4">
+    <div class="col-md-6 p-3 rounded bg-white shadow-sm">
+        <h1 class="h4 pb-2 fw-semibold">Delete course</h1>
 
-            <form action="" method="post">
-                {% csrf_token %}
-                <p>Are you sure you want to delete <strong>"{{ object }}"</strong>?</p>
-                {{ form }}
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete <strong>"{{ object }}"</strong>?</p>
+            {{ form }}
 
-                <div class="text-end">
-                    <a href="{% url 'admin:course-list' %}" class="btn btn-sm btn-secondary"
-                        >Cancel</a
-                    >
-                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                </div>
-            </form>
-        </div>
+            <div class="border-top pt-3">
+                <a href="{% url 'admin:course-list' %}" class="btn btn-secondary">
+                    Cancel
+                </a>
+                <button type="submit" class="btn btn-danger">
+                    Delete
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 {% endblock %}

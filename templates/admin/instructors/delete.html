@@ -3,15 +3,15 @@
 {% block content %}
 <div class="row mt-4">
     <div class="col-md-6 p-3 rounded bg-white shadow-sm">
-        <h1 class="h4 pb-2 fw-semibold">Delete subject</h1>
+        <h1 class="h4 pb-2 fw-semibold">Delete instructor</h1>
 
         <form action="" method="post">
             {% csrf_token %}
-            <p>Are you sure you want to delete <strong>"{{ object }}"</strong>?</p>
+            <p>Are you sure you want to delete <strong>"{{ object.instructor }}"</strong>?</p>
             {{ form }}
 
             <div class="border-top pt-3">
-                <a href="{% url 'admin:subject-list' %}" class="btn btn-secondary">
+                <a href="{% url 'admin:instructor-list' %}" class="btn btn-secondary">
                     Cancel
                 </a>
                 <button type="submit" class="btn btn-danger">

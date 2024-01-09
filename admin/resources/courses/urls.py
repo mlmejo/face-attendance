@@ -1,6 +1,6 @@
 from django.urls import path
 
-from admin.courses.views import (CourseCreateView, CourseDeleteView,
+from .views import (CourseCreateView, CourseDeleteView,
                                  CourseListView, CourseUpdateView)
 
 urlpatterns = [
